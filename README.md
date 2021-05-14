@@ -1,6 +1,8 @@
 # Polynomial
 
-**TODO: Add description**
+Simplistic library for playing with polynomials.
+
+very much in progress
 
 ## Installation
 
