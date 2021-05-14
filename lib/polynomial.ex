@@ -20,6 +20,24 @@ defmodule Polynomial do
   def new([]), do: []
   def new(pn), do: pn
 
+
+  def add([], [], state), do: Enum.reverse(state)
+
+  def add(pa, pb, state \\ [])
+
+  def add([a | pa], [b | pb], state) do
+    add(pa, pb, [ a + b | state])
+  end
+
+  def add([], [b | pb], state) do
+    add([], pb, [b | state])
+  end
+
+  def add([a | pa], [], state) do
+    add(pa, [], [a | state])
+  end
+
+
   def to_string(pn) do
     vars = (0..length(pn))
             |> Enum.map(fn

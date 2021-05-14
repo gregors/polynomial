@@ -19,6 +19,13 @@ defmodule PolynomialTest do
     pa = Polynomial.new([1, 2, 3])
     pb = Polynomial.new([1, 2, 3])
     pc = Polynomial.add(pa, pb)
-    assert Polynomial.to_string(pn) == "2 + 4x + 6x^2"
+    assert Polynomial.to_string(pc) == "2 + 4x + 6x^2"
+  end
+
+  test ".add adds different length polynomials together" do
+    pa = Polynomial.new([1, 2, 3, 4, 5])
+    pb = Polynomial.new([1, 2, 3])
+    pc = Polynomial.add(pa, pb)
+    assert Polynomial.to_string(pc) == "2 + 4x + 6x^2 + 4x^3 + 5x^4"
   end
 end
