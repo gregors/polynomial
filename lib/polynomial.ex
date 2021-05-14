@@ -3,27 +3,14 @@ defmodule Polynomial do
   Documentation for `Polynomial`.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Polynomial.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
-
   def new, do: []
   def new([]), do: []
   def new(pn), do: pn
 
 
-  def add([], [], state), do: Enum.reverse(state)
-
   def add(pa, pb, state \\ [])
+
+  def add([], [], state), do: Enum.reverse(state)
 
   def add([a | pa], [b | pb], state) do
     add(pa, pb, [ a + b | state])
